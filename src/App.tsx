@@ -1,0 +1,43 @@
+import React, { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import HomePage from './pages/HomePage';
+import MLMPlanDetail from './pages/MLMPlanDetail';
+import ParticleBackground from './components/ParticleBackground';
+
+function App() {
+  useEffect(() => {
+    // Add scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, observerOptions);
+
+    const scrollElements = document.querySelectorAll('.scroll-reveal');
+    scrollElements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-slate-900 overflow-x-hidden relative">
+      <ParticleBackground />
+      <Navigation />
+      
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/mlm-plans/:planName" element={<MLMPlanDetail />} />
+      </Routes>
+    </div>
+  );
+}
+
+export default App;

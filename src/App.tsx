@@ -2,6 +2,10 @@ import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
+import ServicesPage from './pages/ServicesPage';
+import PlatformsPage from './pages/PlatformsPage';
+import MLMPlansPage from './pages/MLMPlansPage';
+import PricingPage from './pages/PricingPage';
 import MLMPlanDetail from './pages/MLMPlanDetail';
 import ParticleBackground from './components/ParticleBackground';
 
@@ -34,6 +38,10 @@ function App() {
       
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/platforms" element={<PlatformsPage />} />
+        <Route path="/mlm-plans" element={<MLMPlansPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
         <Route path="/mlm-plans/:planName" element={<MLMPlanDetail />} />
       </Routes>
     </div>

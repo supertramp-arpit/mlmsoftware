@@ -77,17 +77,17 @@ const Hero = () => {
         </div>
 
         {/* Main headline with enhanced animations */}
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 leading-tight animate-slide-in-up font-['Orbitron']">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-bold mb-6 leading-tight animate-slide-in-up font-['Orbitron']">
           <span className="block gradient-text-rainbow">Revolutionizing</span>
           <span className="block gradient-text-cyan mt-4">MLM Software</span>
         </h1>
 
         {/* Enhanced tagline */}
         <div className="mb-8 animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
-          <p className="text-2xl md:text-3xl text-gray-300 mb-4 font-light">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 font-light">
             with Next-Gen Solutions
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-lg">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-sm sm:text-base lg:text-lg">
             <span className="glassmorphism px-4 py-2 rounded-full text-cyan-400 border border-cyan-500/30">
               Fully Customized
             </span>
@@ -105,23 +105,23 @@ const Hero = () => {
 
         {/* Pricing highlight with enhanced design */}
         <div className="inline-block mb-12 animate-fade-in-scale" style={{ animationDelay: '0.6s' }}>
-          <div className="ultra-glass px-12 py-6 rounded-full border border-cyan-500/30 relative overflow-hidden">
+          <div className="ultra-glass px-6 sm:px-8 md:px-12 py-4 md:py-6 rounded-full border border-cyan-500/30 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-cyan-500/5 animate-shimmer"></div>
             <div className="relative">
-              <span className="text-cyan-400 text-xl font-semibold">Starting from </span>
-              <span className="text-4xl font-bold text-white font-['Orbitron']">₹10,000</span>
+              <span className="text-cyan-400 text-lg sm:text-xl font-semibold">Starting from </span>
+              <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-['Orbitron']">₹10,000</span>
             </div>
           </div>
         </div>
 
         {/* Enhanced CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-20 animate-slide-in-up" style={{ animationDelay: '0.9s' }}>
-          <button className="neon-button group px-10 py-5 rounded-full font-semibold text-xl transition-all duration-300 flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center mb-20 animate-slide-in-up" style={{ animationDelay: '0.9s' }}>
+          <button className="neon-button group px-6 sm:px-8 md:px-10 py-4 md:py-5 rounded-full font-semibold text-lg md:text-xl transition-all duration-300 flex items-center gap-3 md:gap-4 w-full sm:w-auto">
             Get a Quote
-            <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+            <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform" />
           </button>
-          <button className="glass-button group px-10 py-5 rounded-full font-semibold text-xl transition-all duration-300 flex items-center gap-4">
-            <Play className="w-6 h-6" />
+          <button className="glass-button group px-6 sm:px-8 md:px-10 py-4 md:py-5 rounded-full font-semibold text-lg md:text-xl transition-all duration-300 flex items-center gap-3 md:gap-4 w-full sm:w-auto">
+            <Play className="w-5 h-5 md:w-6 md:h-6" />
             Explore Solutions
           </button>
         </div>

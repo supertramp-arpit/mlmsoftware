@@ -31,6 +31,31 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    // Handle hash navigation on home page
+    const handleHashChange = () => {
+      if (window.location.pathname === '/' && window.location.hash) {
+        const element = document.querySelector(window.location.hash);
+        if (element) {
+          const navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height') || '100');
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: elementPosition - navHeight - 20,
+            behavior: 'smooth'
+          });
+        }
+      }
+    };
+
+    // Handle initial hash on page load
+    setTimeout(handleHashChange, 100);
+    
+    // Handle hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-900 overflow-x-hidden relative">
       <ParticleBackground />

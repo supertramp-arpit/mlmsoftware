@@ -37,10 +37,10 @@ const Navigation = () => {
   }, [location]);
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'Platforms', path: '/platforms' },
-    { name: 'MLM Plans', path: '/mlm-plans' },
-    { name: 'Pricing', path: '/pricing' }
+    { name: 'Services', path: '/services', hash: '#services' },
+    { name: 'Platforms', path: '/platforms', hash: '#platforms' },
+    { name: 'MLM Plans', path: '/mlm-plans', hash: '#mlm-plans' },
+    { name: 'Pricing', path: '/pricing', hash: '#pricing' }
   ];
 
   return (
@@ -66,7 +66,7 @@ const Navigation = () => {
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                to={item.path}
+                to={location.pathname === '/' ? (item.hash || item.path) : item.path}
                 className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
               >
                 {item.name}
@@ -97,7 +97,7 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.name}
-                  to={item.path}
+                  to={location.pathname === '/' ? (item.hash || item.path) : item.path}
                   className="nav-link text-center py-3"
                   onClick={() => setIsMenuOpen(false)}
                 >

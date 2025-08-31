@@ -21,11 +21,15 @@ const HomePage = () => {
       <div id="mlm-plans">
         <MLMPlans />
       </div>
-      <Features />
+      <div id="features">
+        <Features />
+      </div>
       <div id="pricing">
         <Pricing />
       </div>
-      <CallToAction />
+      <div id="contact">
+        <CallToAction />
+      </div>
       <WhatsAppButton />
     </div>
   );

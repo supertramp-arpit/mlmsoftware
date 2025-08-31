@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Cpu, Network, Server, Shield, Zap, Globe, CheckCircle, Star } from 'lucide-react';
+import { ArrowLeft, Cpu, Network, Server, Shield, Zap, Globe, CheckCircle, Star, Settings } from 'lucide-react';
 
 const ServicesPage = () => {
   const services = [

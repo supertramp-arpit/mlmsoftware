@@ -25,7 +25,7 @@ const Hero = () => {
   return (
     <section 
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden"
+      className="relative min-h-[calc(100vh-var(--nav-height))] flex flex-col justify-center px-4 overflow-hidden"
       style={{
         background: `
           radial-gradient(circle at calc(var(--mouse-x, 0.5) * 100%) calc(var(--mouse-y, 0.5) * 100%), 

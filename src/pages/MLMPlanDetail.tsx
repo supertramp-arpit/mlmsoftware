@@ -492,7 +492,7 @@ const MLMPlanDetail = () => {
   const IconComponent = planData.icon;
 
   return (
-    <div className="plan-detail-container pt-24">
+    <div className="plan-detail-container">
       <div className="max-w-6xl mx-auto">
         {/* Back Button */}
         <Link to="/#mlm-plans" className="back-button mb-8 inline-flex">

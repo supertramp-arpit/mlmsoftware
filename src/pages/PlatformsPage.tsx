@@ -66,7 +66,7 @@ const PlatformsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 px-4">
+    <div className="min-h-screen px-4">
       <div className="max-w-7xl mx-auto">
         {/* Back Button */}
         <Link to="/" className="back-button mb-8 inline-flex">

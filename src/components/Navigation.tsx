@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Zap } from 'lucide-react';
 
@@ -6,7 +7,22 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navRef = useRef<HTMLElement>(null);
 
+  // Update CSS custom property for navigation height
+  useEffect(() => {
+    const updateNavHeight = () => {
+      if (navRef.current) {
+        const height = navRef.current.offsetHeight;
+        document.documentElement.style.setProperty('--nav-height', `${height}px`);
+      }
+    };
+
+    updateNavHeight();
+    window.addEventListener('resize', updateNavHeight);
+    
+    return () => window.removeEventListener('resize', updateNavHeight);
+  }, [isScrolled, isMenuOpen]);
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -29,7 +45,9 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 ${
+    <nav 
+      ref={navRef}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 ${
       isScrolled ? 'nav-menu py-4' : 'py-6'
     }`}>
       <div className="max-w-7xl mx-auto">

@@ -479,6 +479,10 @@ h1, h2, h3 {
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
+/* CSS custom property fallback */
+:root {
+  --nav-height: 100px;
+}
 /* Text selection */
 ::selection {
   background: rgba(0, 212, 255, 0.3);

@@ -10,7 +10,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 
 const HomePage = () => {
   return (
-    <>
+    <div className="relative">
       <Hero />
       <div id="services">
         <Services />
@@ -27,7 +27,7 @@ const HomePage = () => {
       </div>
       <CallToAction />
       <WhatsAppButton />
-    </>
+    </div>
   );
 };
 

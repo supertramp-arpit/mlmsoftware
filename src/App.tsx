@@ -36,14 +36,16 @@ function App() {
       <ParticleBackground />
       <Navigation />
       
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/platforms" element={<PlatformsPage />} />
-        <Route path="/mlm-plans" element={<MLMPlansPage />} />
-        <Route path="/pricing" element={<PricingPage />} />
-        <Route path="/mlm-plans/:planName" element={<MLMPlanDetail />} />
-      </Routes>
+      <div style={{ paddingTop: 'var(--nav-height)' }}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/platforms" element={<PlatformsPage />} />
+          <Route path="/mlm-plans" element={<MLMPlansPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/mlm-plans/:planName" element={<MLMPlanDetail />} />
+        </Routes>
+      </div>
     </div>
   );
 }
